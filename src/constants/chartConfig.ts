@@ -20,6 +20,9 @@ export const PIE_CHART_CONFIG = {
       showInLegend: true,
     },
   },
+  accessibility: {
+    enabled: false,
+  },
 };
 
 export const BAR_CHART_CONFIG = {
@@ -43,5 +46,8 @@ export const BAR_CHART_CONFIG = {
   },
   tooltip: {
     pointFormat: '<b>${point.y:.2f}</b>',
+  },
+  accessibility: {
+    enabled: false,
   },
 };

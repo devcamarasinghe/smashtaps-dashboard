@@ -41,10 +41,17 @@ const FilterControls: React.FC = () => {
             Filters
           </Typography>
           <Button
-            variant="outlined"
-            startIcon={<Clear />}
+            variant="text"
             onClick={handleClear}
             size="small"
+            sx={{
+              color: '#1976d2',
+              textTransform: 'none',
+              fontWeight: 500,
+              fontSize: '0.9rem',
+              p: 0,
+              minWidth: 'auto',
+            }}
           >
             Clear
           </Button>

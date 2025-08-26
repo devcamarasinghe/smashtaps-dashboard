@@ -5,7 +5,7 @@ export const PIE_CHART_CONFIG = {
     height: 400,
   },
   title: {
-    text: 'Product Categories Distribution',
+    text: '',
   },
   tooltip: {
     pointFormat: '<b>{point.name}</b>: {point.percentage:.1f}%',
@@ -31,7 +31,7 @@ export const BAR_CHART_CONFIG = {
     height: 400,
   },
   title: {
-    text: 'Product Prices',
+    text: '',
   },
   xAxis: {
     type: 'category',

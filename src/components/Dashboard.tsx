@@ -27,34 +27,43 @@ const Dashboard: React.FC = () => {
   const { isLoading: categoriesLoading } = useCategories();
   const { isLoading: productsLoading } = useProductsByCategory(selectedCategory);
 
-  // Chart display logic from your plan
-  const shouldShowPieChart = !selectedCategory || (!isReportGenerated && !selectedCategory);
-  const shouldShowBarChart = selectedCategory && isReportGenerated;
+    // Chart display logic - pie chart remains until Run Report is clicked
+    const shouldShowPieChart = !isReportGenerated;
+    const shouldShowBarChart = selectedCategory && isReportGenerated;
 
   // Determine chart title for bar chart
   const getBarChartTitle = () => {
     if (selectedProducts.length > 0) {
-      return 'Selected Products Prices';
+      return 'Products in selected Category';
     }
     return `All Products in ${selectedCategory}`;
   };
 
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom align="center">
-        Product Dashboard
-      </Typography>
       
       <Grid container spacing={3}>
         {/* Filters Section */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <FilterControls />
         </Grid>
 
         {/* Chart Section */}
-        <Grid size={{ xs: 12, md: 8 }}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <Card>
             <CardContent>
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: 2,
+                  fontWeight: 600,
+                  fontSize: '1.1rem',
+                  color: '#2c3e50',
+                  textAlign: 'left',
+                }}
+              >
+                {shouldShowBarChart ? getBarChartTitle() : 'Product Categories Distribution'}
+              </Typography>
               {shouldShowPieChart && (
                 <PieChart 
                   data={pieChartData} 
@@ -66,7 +75,7 @@ const Dashboard: React.FC = () => {
                 <BarChart
                   data={barChartData}
                   loading={productsLoading}
-                  title={getBarChartTitle()}
+                  title=''
                 />
               )}
             </CardContent>

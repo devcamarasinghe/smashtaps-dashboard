@@ -33,34 +33,50 @@ const FilterControls: React.FC = () => {
   const isRunReportDisabled = !selectedCategory || (!hasFiltersChanged && isReportGenerated);
 
   return (
-    <Card>
-      <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Filters
-        </Typography>
-        <Stack spacing={3}>
-          <CategoryFilter />
-          <ProductFilter />
-          <Box display="flex" gap={2}>
-            <Button
-              variant="contained"
-              startIcon={<PlayArrow />}
-              onClick={handleRunReport}
-              disabled={isRunReportDisabled}
-              fullWidth
-            >
-              Run Report
-            </Button>
-            <Button
-              variant="outlined"
-              startIcon={<Clear />}
-              onClick={handleClear}
-              fullWidth
-            >
-              Clear
-            </Button>
-          </Box>
-        </Stack>
+    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', p: 2 }}>
+        {/* Top Row: Filters title + Clear button */}
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+          <Typography variant="h6">
+            Filters
+          </Typography>
+          <Button
+            variant="text"
+            onClick={handleClear}
+            size="small"
+            sx={{
+              color: '#1976d2',
+              textTransform: 'none',
+              fontWeight: 500,
+              fontSize: '0.9rem',
+              p: 0,
+              minWidth: 'auto',
+            }}
+          >
+            Clear
+          </Button>
+        </Box>
+
+        {/* Middle: Dropdowns */}
+        <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+          <Stack spacing={2} mb={3}>
+            <CategoryFilter />
+            <ProductFilter />
+          </Stack>
+        </Box>
+
+        {/* Bottom: Run Report button - fixed at bottom */}
+        <Box sx={{ mt: 'auto' }}>
+          <Button
+            variant="contained"
+            startIcon={<PlayArrow />}
+            onClick={handleRunReport}
+            disabled={isRunReportDisabled}
+            fullWidth
+          >
+            Run Report
+          </Button>
+        </Box>
       </CardContent>
     </Card>
   );

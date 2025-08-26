@@ -16,7 +16,7 @@ const BarChart: React.FC<BarChartProps> = ({ data, loading, title }) => {
   const chartOptions = {
     ...BAR_CHART_CONFIG,
     title: {
-      text: title || 'Product Prices',
+      text: title || '',
     },
     series: [{
       name: 'Price',

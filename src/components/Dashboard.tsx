@@ -34,16 +34,13 @@ const Dashboard: React.FC = () => {
   // Determine chart title for bar chart
   const getBarChartTitle = () => {
     if (selectedProducts.length > 0) {
-      return 'Selected Products Prices';
+      return 'Products in selected Category';
     }
     return `All Products in ${selectedCategory}`;
   };
 
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom align="center">
-        Product Dashboard
-      </Typography>
       
       <Grid container spacing={3}>
         {/* Filters Section */}

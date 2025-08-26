@@ -35,32 +35,37 @@ const FilterControls: React.FC = () => {
   return (
     <Card>
       <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Filters
-        </Typography>
-        <Stack spacing={3}>
+        {/* Top Row: Filters title + Clear button */}
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+          <Typography variant="h6">
+            Filters
+          </Typography>
+          <Button
+            variant="outlined"
+            startIcon={<Clear />}
+            onClick={handleClear}
+            size="small"
+          >
+            Clear
+          </Button>
+        </Box>
+
+        {/* Middle: Dropdowns */}
+        <Stack spacing={2} mb={3}>
           <CategoryFilter />
           <ProductFilter />
-          <Box display="flex" gap={2}>
-            <Button
-              variant="contained"
-              startIcon={<PlayArrow />}
-              onClick={handleRunReport}
-              disabled={isRunReportDisabled}
-              fullWidth
-            >
-              Run Report
-            </Button>
-            <Button
-              variant="outlined"
-              startIcon={<Clear />}
-              onClick={handleClear}
-              fullWidth
-            >
-              Clear
-            </Button>
-          </Box>
         </Stack>
+
+        {/* Bottom: Run Report button */}
+        <Button
+          variant="contained"
+          startIcon={<PlayArrow />}
+          onClick={handleRunReport}
+          disabled={isRunReportDisabled}
+          fullWidth
+        >
+          Run Report
+        </Button>
       </CardContent>
     </Card>
   );

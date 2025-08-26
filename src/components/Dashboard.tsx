@@ -27,9 +27,9 @@ const Dashboard: React.FC = () => {
   const { isLoading: categoriesLoading } = useCategories();
   const { isLoading: productsLoading } = useProductsByCategory(selectedCategory);
 
-  // Chart display logic from your plan
-  const shouldShowPieChart = !selectedCategory || (!isReportGenerated && !selectedCategory);
-  const shouldShowBarChart = selectedCategory && isReportGenerated;
+    // Chart display logic - pie chart remains until Run Report is clicked
+    const shouldShowPieChart = !isReportGenerated;
+    const shouldShowBarChart = selectedCategory && isReportGenerated;
 
   // Determine chart title for bar chart
   const getBarChartTitle = () => {
@@ -47,12 +47,12 @@ const Dashboard: React.FC = () => {
       
       <Grid container spacing={3}>
         {/* Filters Section */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <FilterControls />
         </Grid>
 
         {/* Chart Section */}
-        <Grid size={{ xs: 12, md: 8 }}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <Card>
             <CardContent>
               {shouldShowPieChart && (

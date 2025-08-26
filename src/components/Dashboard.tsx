@@ -52,6 +52,18 @@ const Dashboard: React.FC = () => {
         <Grid size={{ xs: 12, md: 9 }}>
           <Card>
             <CardContent>
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: 2,
+                  fontWeight: 600,
+                  fontSize: '1.1rem',
+                  color: '#2c3e50',
+                  textAlign: 'left',
+                }}
+              >
+                {shouldShowBarChart ? getBarChartTitle() : 'Product Categories Distribution'}
+              </Typography>
               {shouldShowPieChart && (
                 <PieChart 
                   data={pieChartData} 
@@ -63,7 +75,7 @@ const Dashboard: React.FC = () => {
                 <BarChart
                   data={barChartData}
                   loading={productsLoading}
-                  title={getBarChartTitle()}
+                  title=''
                 />
               )}
             </CardContent>

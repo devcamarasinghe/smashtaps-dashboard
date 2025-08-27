@@ -12,14 +12,26 @@ interface BarChartProps {
   title?: string;
 }
 
+import { useFilterStore } from '../../store/filterStore';
+
 const BarChart: React.FC<BarChartProps> = ({ data, loading, title }) => {
+  const selectedCategory = useFilterStore(state => state.selectedCategory);
   const chartOptions = {
     ...BAR_CHART_CONFIG,
     title: {
       text: title || '',
     },
+    legend: {
+      enabled: false,
+    },
+    yAxis: {
+      ...BAR_CHART_CONFIG.yAxis,
+      title: {
+        text: selectedCategory || 'Category',
+      },
+    },
     series: [{
-      name: 'Price',
+      name: selectedCategory || 'Category',
       data: data.map(item => ({
         name: item.name,
         y: item.value,

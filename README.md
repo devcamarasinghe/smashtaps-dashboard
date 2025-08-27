@@ -1,3 +1,5 @@
+## 🌐 Live Demo
+
 **Hosted Application:** [https://smashtaps-dashboard.vercel.app/](https://smashtaps-dashboard.vercel.app/)
 
 **GitHub Repository:** [https://github.com/devcamarasinghe/smashtaps-dashboard](https://github.com/devcamarasinghe/smashtaps-dashboard)
@@ -37,6 +39,7 @@
 ```bash
 # Run tests once
 npm test
+```
 
 **Test Coverage:**
 - ✅ Hook testing (`useChartData`)

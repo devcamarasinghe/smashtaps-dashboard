@@ -1,5 +1,5 @@
 // src/components/filters/FilterControls.tsx
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Card,
   CardContent,
@@ -22,13 +22,13 @@ const FilterControls: React.FC = () => {
     markReportGenerated,
   } = useFilterStore();
 
-  const handleRunReport = () => {
+  const handleRunReport = useCallback(() => {
     markReportGenerated();
-  };
+  }, [markReportGenerated]);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     clearFilters();
-  };
+  }, [clearFilters]);
 
   const isRunReportDisabled = !selectedCategory || (!hasFiltersChanged && isReportGenerated);
 

@@ -1,5 +1,5 @@
 // src/components/filters/ProductFilter.tsx
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   FormControl,
   InputLabel,
@@ -20,10 +20,10 @@ const ProductFilter: React.FC = () => {
   const { selectedCategory, selectedProducts, setSelectedProducts } = useFilterStore();
   const { data: products, isLoading, error } = useProductsByCategory(selectedCategory);
 
-  const handleChange = (event: SelectChangeEvent<number[]>) => {
+  const handleChange = useCallback((event: SelectChangeEvent<number[]>) => {
     const value = event.target.value;
     setSelectedProducts(typeof value === 'string' ? [] : value);
-  };
+  }, [setSelectedProducts]);
 
   if (!selectedCategory) {
     return null;

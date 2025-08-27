@@ -1,4 +1,3 @@
-// src/components/filters/ProductFilter.tsx
 import React, { useCallback } from 'react';
 import {
   FormControl,

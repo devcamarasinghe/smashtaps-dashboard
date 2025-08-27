@@ -1,4 +1,3 @@
-// src/services/productService.ts
 import axios from 'axios';
 import type { Product, Category } from '../types';
 

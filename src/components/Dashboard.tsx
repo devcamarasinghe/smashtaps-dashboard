@@ -1,4 +1,3 @@
-// src/components/Dashboard.tsx
 import React from 'react';
 import {
     Container,
@@ -24,15 +23,12 @@ const Dashboard: React.FC = () => {
 
     const { pieChartData, barChartData } = useChartData();
 
-    // Get loading states
     const { isLoading: categoriesLoading } = useCategories();
     const { isLoading: productsLoading } = useProductsByCategory(selectedCategory);
 
-    // Chart display logic - pie chart remains until Run Report is clicked
     const shouldShowPieChart = !isReportGenerated;
     const shouldShowBarChart = selectedCategory && isReportGenerated;
 
-    // Determine chart title for bar chart
     const getBarChartTitle = () => {
         if (selectedProducts.length > 0) {
             return 'Products in selected Category';

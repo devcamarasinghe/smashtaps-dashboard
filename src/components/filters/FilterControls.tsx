@@ -1,4 +1,3 @@
-// src/components/filters/FilterControls.tsx
 import React, { useCallback } from 'react';
 import {
   Card,
@@ -35,7 +34,6 @@ const FilterControls: React.FC = () => {
   return (
     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', p: 2 }}>
-        {/* Top Row: Filters title + Clear button */}
         <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
           <Typography variant="h6">
             Filters
@@ -57,7 +55,6 @@ const FilterControls: React.FC = () => {
           </Button>
         </Box>
 
-        {/* Middle: Dropdowns */}
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
           <Stack spacing={2} mb={3}>
             <CategoryFilter />
@@ -65,7 +62,6 @@ const FilterControls: React.FC = () => {
           </Stack>
         </Box>
 
-        {/* Bottom: Run Report button - fixed at bottom */}
         <Box sx={{ mt: 'auto' }}>
           <Button
             variant="contained"

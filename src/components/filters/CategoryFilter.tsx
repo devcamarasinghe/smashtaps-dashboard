@@ -1,4 +1,3 @@
-// src/components/filters/CategoryFilter.tsx
 import React, { useCallback } from 'react';
 import {
   FormControl,

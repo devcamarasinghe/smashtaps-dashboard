@@ -36,6 +36,14 @@ const BarChart: React.FC<BarChartProps> = ({ data, loading, title }) => {
         name: item.name,
         y: item.value,
       })),
+      dataLabels: {
+        enabled: true,
+        format: '${y}',
+        style: {
+          fontWeight: 'bold',
+          color: '#333',
+        },
+      },
     }],
   };
 

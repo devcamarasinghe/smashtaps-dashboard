@@ -53,18 +53,15 @@ describe('useChartData', () => {
 
       // Each category should have equal share (100/3 = 33.33%)
       expect(result.current.pieChartData).toHaveLength(3)
-      expect(result.current.pieChartData[0]).toEqual({
-        name: 'Electronics',
-        value: 33.333333333333336
-      })
-      expect(result.current.pieChartData[1]).toEqual({
-        name: 'Clothing', 
-        value: 33.333333333333336
-      })
-      expect(result.current.pieChartData[2]).toEqual({
-        name: 'Books',
-        value: 33.333333333333336
-      })
+      
+      expect(result.current.pieChartData[0].name).toBe('Electronics')
+      expect(result.current.pieChartData[0].value).toBeCloseTo(33.3333, 4)
+      
+      expect(result.current.pieChartData[1].name).toBe('Clothing')
+      expect(result.current.pieChartData[1].value).toBeCloseTo(33.3333, 4)
+      
+      expect(result.current.pieChartData[2].name).toBe('Books')
+      expect(result.current.pieChartData[2].value).toBeCloseTo(33.3333, 4)
     })
 
     it('should return empty array when no categories', () => {

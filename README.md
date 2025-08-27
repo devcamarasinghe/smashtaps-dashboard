@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+## 🌐 Live Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Hosted Application:** [https://smashtaps-dashboard.vercel.app/](https://smashtaps-dashboard.vercel.app/)
 
-Currently, two official plugins are available:
+**GitHub Repository:** [https://github.com/devcamarasinghe/smashtaps-dashboard](https://github.com/devcamarasinghe/smashtaps-dashboard)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Quick Start
 
-## Expanding the ESLint configuration
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Installation
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/devcamarasinghe/smashtaps-dashboard.git
+   cd smashtaps-dashboard
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   ```
+   http://localhost:5173
+   ```
+
+
+## 🧪 Testing
+
+```bash
+# Run tests once
+npm test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Test Coverage:**
+- ✅ Hook testing (`useChartData`)
+- ✅ Chart data generation logic
+- ✅ State management behavior
+- ✅ Filtering and report generation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/          # React components
+│   ├── ui/             # Reusable UI components
+│   ├── charts/         # Chart components
+│   └── filters/        # Filter components
+├── hooks/              # Custom React hooks
+├── store/              # Zustand state management
+├── types/              # TypeScript type definitions
+├── utils/              # Utility functions
+└── __tests__/          # Unit tests
+    └── hooks/          # Hook tests
+```
+
+## 🎯 Key Components
+
+### Charts
+- **PieChart** - Category distribution visualization
+- **BarChart** - Product price comparison with filtering
+
+### Filters
+- **CategoryFilter** - Filter products by category
+- **ProductFilter** - Select specific products for reports
+- **ReportGenerator** - Generate filtered chart reports
+
+### State Management
+- **filterStore** - Global state for filters and selections
+- **TanStack Query** - Server state management for API data

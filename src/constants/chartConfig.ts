@@ -40,7 +40,7 @@ export const BAR_CHART_CONFIG = {
   },
   yAxis: {
     title: {
-      text: 'Price ($)',
+      text: '',
     },
   },
   tooltip: {

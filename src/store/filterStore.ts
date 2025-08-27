@@ -1,4 +1,3 @@
-// src/store/filterStore.ts
 import { create } from 'zustand';
 import type { FilterState } from '../types';
 
@@ -19,7 +18,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   setSelectedCategory: (category) =>
     set(() => ({
       selectedCategory: category,
-      selectedProducts: [], // Reset products when category changes
+      selectedProducts: [], // Clear product selection when category changes
       hasFiltersChanged: true,
       isReportGenerated: false,
     })),

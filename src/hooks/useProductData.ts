@@ -1,4 +1,3 @@
-// src/hooks/useProductData.ts
 import { useQuery } from '@tanstack/react-query';
 import ProductService from '../services/productService';
 
@@ -6,7 +5,7 @@ export const useCategories = () => {
   return useQuery({
     queryKey: ['categories'],
     queryFn: ProductService.getCategories,
-    staleTime: 5 * 60 * 1000, // 5 minutes
+    staleTime: 5 * 60 * 1000,
   });
 };
 

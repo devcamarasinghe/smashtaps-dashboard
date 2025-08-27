@@ -1,5 +1,4 @@
-// src/components/filters/CategoryFilter.tsx
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   FormControl,
   InputLabel,
@@ -18,10 +17,10 @@ const CategoryFilter: React.FC = () => {
   const { selectedCategory, setSelectedCategory } = useFilterStore();
   const { data: categories, isLoading, error } = useCategories();
 
-  const handleChange = (event: SelectChangeEvent<string>) => {
+  const handleChange = useCallback((event: SelectChangeEvent<string>) => {
     const value = event.target.value;
     setSelectedCategory(value || null);
-  };
+  }, [setSelectedCategory]);
 
   if (isLoading) {
     return (

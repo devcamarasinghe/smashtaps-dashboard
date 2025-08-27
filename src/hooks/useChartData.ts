@@ -1,4 +1,3 @@
-// src/hooks/useChartData.ts
 import { useMemo } from 'react';
 import { useCategories, useProductsByCategory } from './useProductData';
 import { useFilterStore } from '../store/filterStore';
@@ -17,7 +16,7 @@ export const useChartData = () => {
   const pieChartData: ChartData[] = useMemo(() => {
     if (!categories) return [];
     
-    // Equally divide the pie chart among all categories
+    // Equal distribution for all categories
     const totalCategories = categories.length;
     const equalValue = totalCategories > 0 ? 100 / totalCategories : 0;
     

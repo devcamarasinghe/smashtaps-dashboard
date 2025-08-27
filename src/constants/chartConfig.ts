@@ -1,4 +1,3 @@
-// src/constants/chartConfig.ts
 export const PIE_CHART_CONFIG = {
   chart: {
     type: 'pie',

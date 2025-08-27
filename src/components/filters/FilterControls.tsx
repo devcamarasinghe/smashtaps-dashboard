@@ -8,7 +8,7 @@ import {
   Box,
   Stack,
 } from '@mui/material';
-import { PlayArrow, Clear } from '@mui/icons-material';
+import { PlayArrow } from '@mui/icons-material';
 import CategoryFilter from './CategoryFilter';
 import ProductFilter from './ProductFilter';
 import { useFilterStore } from '../../store/filterStore';
